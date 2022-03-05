@@ -1,0 +1,77 @@
+!doctype html> 
+<html lang="en"> 
+    <html> 
+      <head> 
+      <meta charset="utf=8"> 
+      <meta http-equiv="X-UA compatible" content="IE 10"> 
+      <meta name="viewport" content="widht=device-width"> 
+      <title> Homework 3 - Functions </title>
+    </head> 
+    <body>
+    <h1>Homework 3 - Part 3</h1>
+    <p>You can use the form below to convert temperature from Celsius to Farenheit or from Farenheit to Celsius</p>
+      <form name="convert" id="convert">
+        <label for="temp">Type the value you want to convert: </label><input type="number" name="temp" id="temp">
+        <br><br>
+        <input type="button" value="Celsius to Farenheit" onclick="convertC();">&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Farenheit to Celsius" onclick="convertF();"><br><br>
+        <input type="reset" value="Clear Form">
+        <br><br>
+        <label for="result">Result: </label><br>
+        <textarea rows="2" cols="30" id="result" readonly></textarea>
+    </form>
+    <script>
+    function convertC() {
+        var temperature = parseFloat(document.getElementById("temp").value);
+
+        var convertedTemp = ((9 * temperature) / 5) + 32;
+
+        var msg = temperature + "C is " + convertedTemp + "F";
+
+        document.getElementById("result").value = msg;
+
+    
+    }
+
+
+    function convertF() { 
+
+      var temperature = parseFloat(document.getElementById("temp").value);
+      //F = (9/5 * C) + 32  
+      var convertedTemp = ((9 / 5)* temperature) + 32;
+
+      var msg = convertedTemp  + "F is " + temperature + "C";
+
+      document.getElementById("result").value = msg;
+  
+    
+    }
+
+
+    /* Here are the steps of the code. Notice that here you have two buttons: one to convert the value the user entered 
+    from C to F and the other to convert from F to C
+    that is why you have two functions to make it easier!
+    If the user clicks the button "Celsius to Farenheit", the function convertC() will be executed and inside the { and }
+    you can see that I already wrote the code for you!!! 
+
+    If the user clicks the button "Farenheit to Celsius", the function convertF() will be executed and inside the { and }
+    of this function, here are the steps for you to write the code
+    1) You will need to have a variable to receive the value the user typed in the input box with id="temp" 
+    suppose you call this variable as temperature (remember that you can have the same name of the variable because 
+    as you are declaring the variables inside the function they are considered LOCAL variables)
+    2) You will need to use the parseFloat because temperature can come with decimals, right?
+    3) As you are converting from Farenheit to Celsius, then you will need to have a variable and that variable
+    will have the result of the following calculation: 5 * ((temperature - 32) / 9) which will give you the value of the temperature in Celsius
+    Suppose you call this variable as convertedTemp (it also can have the same variable name as it will be LOCAL TO THE FUNCTION)
+    4) Then you will have a variable that will be the message that you will show to the user 
+    something as 
+    var msg = temperature + "F is " + convertedTemp + "C";
+    5) This msg needs to be written in the textarea of the form that has the id="result" */
+    </script>
+
+     </body>
+
+     <a href="HM3.html"> Go back Homework Page </a>
+
+     
+    </html>
