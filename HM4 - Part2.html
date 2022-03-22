@@ -22,7 +22,7 @@
             
             
           </style>
-        <script>
+         <script>
            calculate(1000,0.05,10) 
            calculate(1000,0.06,10) 
            calculate(1000,0.07,10) 
@@ -34,14 +34,17 @@
             html += "<th>Years</th><th>Amount</th><th>Invest Rate</th>"
             html += "</tr>"
 
-            for (x=1;x<=years;x++){
-            var total = Amount * percent 
+            var total=0;
+            var o = {style: "currency", currency: "USD"};
+
+            for (x=1;x<=years;x++){ 
+            total = Amount * percent 
             // 1000 = (1000 * 5%) + 1000 
-            var Amount = total + Amount 
+            Amount = total + Amount 
            
 
             html += "<tr>"
-            html += "<td>"+x+"</td><td>"+Amount.toFixed(2).toLocaleString()+"</td><td>"+percent+"</td>"
+            html += "<td>"+x+"</td><td>"+Amount.toLocaleString('en', o)+"</td><td>"+percent+"</td>"
             html += "</tr>"
             
              }
@@ -49,7 +52,7 @@
              document.writeln(html)
           }
 
-        </script>    
+        </script> 
 
       </head>
 
