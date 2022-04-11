@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content" viewport="width-device">
+    <title> Homework 5 = Part 2 </title>
+    <style>
+        text {
+            color: blue;
+        }
+
+        body {
+            background-color: silver;
+        }
+    </style>
+    <script>
+
+        function openpage(element) {
+            if (element.value !== "")
+                window.open(element.value, "_blank")
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <h3> Select One Option </h3>
+        <select onchange="openpage(this)" name="Selection">
+            <option value=""> </option>
+            <option value="https://www.windy.com"> Windy </option>
+            <option value="https://www.accuweather.com/en/us/national/weather-radar"> Accuweather </option>
+            <option value="https://weather.com/"> Weather </option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <h3> Choose The Best The Options</h3>
+        <select name="selection2">
+            <option value=""></option>
+            <option onclick="openpage(this)" value="https://www.behringer.com/"> Behringer </option>
+            <option onclick="openpage(this)" value="https://usa.yamaha.com/"> Yamaha </option>
+            <option onclick="openpage(this)" value="https://www.pioneerdj.com/"> Pionner </option>
+
+
+        </select>
+
+    </form>
+    <br>
+    <br> 
+    <a href="HM5 - Homework 5 - Arrays.html"> Go Back to Home Page</a> 
+</body>
+
+
+
+
+</html>

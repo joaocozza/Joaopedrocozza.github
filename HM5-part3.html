@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content" viewport="width-device">
+    <title> Homework 5 - Part 3 </title>
+
+    <script>
+        function getdata() {
+            var states = [
+                ["AL", "Alabama", "Montgomery", 4903185],
+                ["AK", "Alaska", "Juneau", 731545],
+                ["AZ", "Arizona", "Phoenix", 7278717],
+                ["AR", "Arkansas", "Little Rock", 3017825],
+                ["CA", "California", "Sacramento", 39512223],
+                ["CO", "Colorado", "Denver", 5758736]
+            ]
+            var chooseState = document.getElementById("st").value
+            var msg;
+            var found;
+
+            for (row = 0; row < 6; row++) {
+                if (states[row][0] == chooseState.toUpperCase()|| states[row][1] == chooseState) {
+                    msg = "here is the information you resquested: <br> State Abbrev = " +  states[row][0]
+                    +"<br>State Name = "+ states[row][1]
+                    +"<br>Capital = " +   states[row][2]
+                    +"<br>Population = " +  states[row][3].toLocaleString();  
+                    found = true;
+                }
+            }
+
+                if(found==true) {
+                    document.getElementById("result").innerHTML=msg
+                }
+                else{
+                    document.getElementById("result").innerHTML=" the information is wrong" 
+                }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="st">
+    <input type="button" value="State Info" onclick="getdata()">
+    <div id="result"></div> 
+    <br>
+    <br> 
+    
+    <a href="HM5 - Homework 5 - Arrays.html"> Go Back to Home Page</a> 
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content" viewport="width-device">
+    <title> Homework 1 - Part 1 </title>
+
+    <style>
+        #msg{color:green;}
+        body{background-color: silver; }
+
+        
+
+    </style>
+    <script>
+        //event that listen the form//
+
+        function validate(e) {
+            // e.preventDefault()
+            var name = document.getElementById("name").value
+            if (name == "") {
+                document.getElementById("msg").innerHTML ="Put other value in the input"
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <form id="form" name="myform" onsubmit="validate(event)">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name"> Name </label>
+                        <input type="text" name="name" id="name" size="30" autofocus="mouse">
+                    </td>
+                    <td>
+                        <div id="msg"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rate this page</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="rating" id="excelent">Excelent<label><br>
+                            <input type="radio" name="rating" id="neutral">Neutral<label><br>
+                                <input type="radio" name="rating" id="bad">Bad<label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="msg2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Choose the Browser </label>
+                        <Select name="Browsers" id="Browsers">
+                            <Option value="Mozila"> Moliza </Option>
+                            <option value="Explorer10"> Explorer10</option>
+                            <option value="Chorme"> Ghorme </option>
+                        </Select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="msg3"></div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="submit">
+                    </td>
+                </tr>
+                </tr>
+
+
+
+            </table>
+
+        </form>
+    </section>
+            <a href="HM5 - Homework 5 - Arrays.html"> Go back to HomePage</a>
+</body>
+
+</html>
