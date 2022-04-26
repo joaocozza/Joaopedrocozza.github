@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title> HM6-part2 </title>
+    <style>
+        body{background-color: teal;} 
+    </style>
+    <script>
+
+        var text = "Mary had a little lamb"
+
+        function outcome() {
+
+            // request the input letter
+            var search = document.getElementById("search").value
+
+            // change it to lower case
+            text = text.toLowerCase()
+
+            // do a for to pass through the text
+            var count = 0
+            for (i = 0; i <= text.length; i++) {
+
+                // compare the position of string with the search text and count it 
+                if (search == text.charAt(i)) {
+                    count += 1
+                }
+            }
+
+            // get the message to de user
+            if (count > 0) {
+                document.getElementById("textarea").value = "Were found only " + count + " letters into the input"
+            }
+            else {
+                window.open("https://www.w3schools.com/html/default.asp", "W3C schools", "top=left,heigh=100,width=300")
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="search" value="">
+        <input type="button" id="result" value="search" onclick="outcome()">
+        <input type="reset" value="reset">
+        <br> 
+        <br> 
+        <textarea id="textarea"></textarea>
+
+    </form>
+    <br>
+    <br> 
+    <a href="HM6.html"> Let's make a U-turn</a> <br> 
+
+
+</body>
+
+
+</html>
+
+</head>
+
+</html>
