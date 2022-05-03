@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Howework 7 - Part 2 </title>
+    <style>
+        #msg {text-align: bottom; color: green} 
+        
+    </style>
+</head>
+
+<body>
+    <h2> Fill in with your name </h2>
+    <form onsubmit="savecookie()">
+        <label for="fname">First Name </label><br>
+        <input type="text" id="fname" value="" required> <br>
+        <label for="lname">Second Name </label><br>
+        <input type="text" id="lname" value="" required> <br>
+        <br>
+        <input type="submit" value="submit">
+
+    </form>
+    <br>
+    <a href="HM7.html - Homepage.html"> Homepage</a>
+    <div id="msg"></div> 
+</body>
+
+<script>
+
+    function savecookie() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value; 
+
+        document.cookie = "nameuser" + "=" + fname + ";" ;
+
+        document.cookie = "lnameuser" + "=" + lname+ ";" ;
+    }
+
+    function readcookie() {
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var Cookies = decodedCookie.split(";")  
+        if (Array.isArray(Cookies)) {
+
+        document.getElementById("msg").innerHTML = "welcome back"
+        }
+    }
+    readcookie()
+    function deletecookie() {
+        document.cookie = "nameuser=null; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "lnameuser=null; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+
+    }
+    window.addEventListener('onbeforeunload', function(e){
+        e.preventDefault();
+        document.cookie = "nameuser=null; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "lnameuser=null; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+        e.returnValue = '';
+    }, false)
+</script>
+
+</html>

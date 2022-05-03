@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA compatible" content="IE-10">
+        <meta name="viewport" width="device-width">
+        <title> Homework 7 - part 1 </title>
+        <style>
+            body{
+                background-color: silver;
+            }
+            h2 {
+                color: red; 
+            }
+            p {
+                color: royalblue;
+            }
+        </style>
+        <script>
+            function Choose(select) {
+                // if selected value was empty
+                // paint body white
+                // else
+                // paint with the color selected
+                if(select.value=="") {
+                    document.body.style.backgroundColor="white"    
+                }
+                else{
+                    document.body.style.backgroundColor=select.value
+                }
+            }
+
+            function fontsize(Radio){
+                // cliquei no normal
+                if(Radio.value=="Normal") {  
+                    document.body.style.fontSize="medium"    
+                }
+                else if(Radio.value=="large")
+                    document.body.style.fontSize="large"
+                else{
+                    document.body.style.fontSize="small"
+                }
+            }
+
+            function fontStyle(Element){
+                document.body.style.fontStyle=Element.value
+            }
+        </script>
+    </head>
+    <body> 
+        <h2> Select one </h2>
+        <form>
+            <select onchange="Choose(this)"> 
+                <option value=""> Choose the back-ground </option>
+                <option value="red"> Choose the Red </option>
+                <option value="Blue"> Choose the Blue </option>
+                <option value="yellow"> Choose the yellow </option>
+            </select>
+            <br>
+            <p>
+                <input type="radio" name="size" onclick="fontsize(this)" value="Normal">
+                Normal Size
+            </p>
+           
+            <p>
+                <input type="radio" name="size" onclick="fontsize(this)" value="large">
+                Large size
+            </p>
+            <p>
+                <input type="radio" name="size" onclick="fontsize(this)" value="small"> 
+                Small size 
+            </p> 
+            <br>
+            <p>
+                <input type="checkbox" onclick="fontStyle(this)" value="normal">
+                 Normal 
+            </p>
+            <p> 
+                <input type="checkbox" onclick="fontStyle(this)" value="italic">
+                Italic 
+
+            </p>
+            <p>
+                <input type="checkbox" onclick="fontStyle(this)" value="oblique">
+                Oblique
+            </p>
+
+        </form>
+        
+        <a href="HM7.html - Homepage.html"> Homepage </a>
+    </body>
+</html>
